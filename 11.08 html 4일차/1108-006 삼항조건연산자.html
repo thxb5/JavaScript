@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항조건연산자</title>
+    <script>
+        // var walk = prompt("하루에 걷는 양은 몇 걸음인가요?");
+        // if(walk >= 10000) {
+        //     document.write("와우 브라보~~ 건강하시겠네요?")
+        // }
+        //조건문은 중괄호, 실행문은 소괄호
+
+        var id = "thxb";
+        var pw = "1234";
+
+        var user_id = prompt("아이디가 뭔가요?");
+        var user_pw = prompt("비번이 뭔가요?");
+        
+        if( id == user_id ) {
+            if(pw == user_pw) {
+                document.write(user_id + " 님 반갑습니다");
+            } else {
+                alert("비번 일치 안함. 뭔가 의심됨 떠나세요~");
+                location.reload();
+            }
+        } else {
+            alert("아이디가 일치하지 않아요. 떠나세요~");
+            location.reload();
+        }
+        //***중요한 부분임
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

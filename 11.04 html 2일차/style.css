@@ -1,0 +1,15 @@
+p {
+    font-size: 18px;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-decoration: line-through; */
+    background: yellow;
+    font-weight: 600;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #000000;
+    border: 10px solid gray;
+    text-shadow: 4px 4px 5px orange;
+    box-shadow: 4px 4px 5px red;
+
+}

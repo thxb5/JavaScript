@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            /* border: 1px solid black; */
+            margin: 0;
+            padding: 0;
+        }
+
+        #container * {
+            margin: 3px;
+        }
+
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+        }
+    </style>
+    <script>
+        // let userInfo = new Map();
+        //유저 목록(아이디, 비밀번호)
+        let userInfo = new Map([
+            ["admin","admin"]
+        ]);
+
+        let loginHTML = `<div id="inputId">
+                            <label for="userId">ID</label>
+                            <input type="text" id="userId" placeholder="아이디를 입력하세요.">
+                        </div>
+                        <div id="inputPw">
+                            <label for="userPw">PW</label>
+                            <input type="password" id="userPw" placeholder="비밀번호를 입력하세요.">
+                        </div>
+                        <div>
+                            <button id="btnLogin" onclick="login()">로그인</button>
+                            <button id="btnJoin" onclick="join()"">회원가입</button>
+                            <button id="btnShowUserList" onclick="show()"">회원목록</button>
+                        </div>
+                        <br><hr><br>
+                        <h2>화면설명</h2>
+                        <p>1. 로그인을 하는 화면입니다.<br>
+                            2. 아이디와 비밀번호를 입력 후 로그인 버튼을 누르면 로그인이 됩니다.<br>
+                            3. 아이디 또는 비밀번호가 틀리면 오류메세지가 출력됩니다.<br>
+                            4. 회원가입 버튼을 누르면 회원가입 html이 출력됩니다.<br>
+                            5. 회원목록 버튼을 누르면 회원목록 html이 출력됩니다.</p>
+                        <br>
+                        <h2>구성요소</h2>
+                        <ol>
+                            <li>1. 아이디 입력칸</li>
+                            <li>2. 비밀번호 입력칸</li>
+                            <li>3. 로그인 버튼</li>
+                            <li>4. 회원가입 버튼</li>
+                            <li>5. 회원목록 버튼</li>
+                        </ol>`;
+
+        let joinHTML = `<div>
+                            <label for="joinUserId">ID</label>
+                            <input type="text" id="joinUserId" placeholder="아이디를 입력하세요.">
+                            <button id="idCheck">중복체크</button>
+                        </div>
+                        <div>
+                            <label for="joinUserPw">PW</label>
+                            <input type="password" id="joinUserPw" placeholder="비밀번호를 입력하세요.">
+                        </div>
+                        <div>
+                            <label for="pwCheck">PW Check</label>
+                            <input type="password" id="pwCheck" placeholder="비밀번호 확인">
+                        </div>
+                        <div>
+                            <button id="joinComplete">확인</button>
+                            <button id="joinCancle">취소</button>
+                        </div>
+                        <br><hr><br>
+                        <h2>화면설명</h2>
+                        <p>1. 회원가입을 하는 화면입니다.<br>
+                            2. 아이디, 비밀번호, 비밀번호 확인을 입력하고 아이디 중복체크 후 확인을 누르면 회원가입이 완료됩니다.<br>
+                            3. 각 항목에 값을 입력하지 않으면 오류메세지가 출력됩니다.<br>
+                            4. 비밀번호와 비밀번호 확인의 값이 일치하지 않으면 오류메세지가 출력됩니다.<br>
+                            5. 아이디 중복체크를 하지 않으면 회원가입을 완료 할 수 없습니다.<br>
+                            6. 취소 버튼을 누르면 로그인 화면으로 돌아갑니다.</p>
+                        <br>
+                        <h2>구성요소</h2>
+                        <ol>
+                            <li>1. 아이디 입력칸</li>
+                            <li>2. 중복체크 버튼</li>
+                            <li>3. 비밀번호 입력칸</li>
+                            <li>4. 비밀번호 확인칸</li>
+                            <li>5. 확인 버튼</li>
+                            <li>6. 취소 버튼</li>
+                        </ol>`;
+        
+        function login() {
+            let userId = document.getElementById("userId").value;
+            let userPw = document.getElementById("userPw").value;
+
+            //유저 정보 체크
+            if(userId==""){
+                alert("아이디를 입력해주세요.");
+            }
+            else if (userPw=="") {
+                alert("비밀번호를 입력해주세요.");
+            } else {
+                //아이디 체크
+                if(userInfo.has(userId)) {
+                    //비밀번호 체크
+                    if(userInfo.get(userId) == userPw){
+                        alert("로그인 성공!");
+
+                        //입력칸 초기화
+                        document.getElementById("userId").value = "";
+                        document.getElementById("userPw").value = "";
+
+                        let loginInfo = {
+                            loginUserId : userId,
+                            loginUserPw : userPw
+                        }
+
+                        localStorage.setItem("loginInfo", JSON.stringify(loginInfo));
+                        window.open("main.html", "_self");
+                    } else {
+                        alert("비밀번호 오류!");
+                    }
+                } else {
+                    alert("아이디 오류!");
+                }
+            }
+        }
+        
+        function join() {
+            //중복체크 여부
+            let duplicationCheck = false;
+
+            //회원가입 HTML을 넣어줌
+            document.getElementById("container").innerHTML = joinHTML;
+
+            document.getElementById("idCheck").addEventListener("click", function(){
+                let userId = document.getElementById("joinUserId").value;
+                if(userId=="") alert("아이디를 입력해주세요.");
+                if(userInfo.has(userId)) {
+                    alert("이미 등록된 아이디입니다.");
+                } else {
+                    alert("등록이 가능한 아이디입니다.")
+                    duplicationCheck = true;
+                }
+            });
+
+            //완료 버튼 클릭시 이벤트
+            document.getElementById("joinComplete").addEventListener("click", function(){
+                let userId = document.getElementById("joinUserId").value;
+                let userPw = document.getElementById("joinUserPw").value;
+                let pwCheck = document.getElementById("pwCheck").value;
+                if(userId=="") {
+                    alert("아이디를 입력해주세요.");
+                } else if(userPw=="") {
+                    alert("비밀번호를 입력해주세요.");
+                } else if (pwCheck=="") {
+                    alert("비밀번호 확인을 입력해주세요.");
+                } else if (userPw!=pwCheck) {
+                    alert("비밀번호가 일치하지 않습니다.");
+                } else if (duplicationCheck==false) {
+                    alert("아이디 중복체크를 해주세요.");
+                } else {
+                    alert("회원가입 성공!");
+
+                    //userInfo에 userId, userPw 입력.
+                    userInfo.set(userId,userPw);
+
+                    //로그인 HTML을 넣어줌
+                    document.getElementById("container").innerHTML = loginHTML;
+                }
+                    
+            });
+
+            //취소 버튼 클릭시 이벤트
+            document.getElementById("joinCancle").addEventListener("click", function(){
+                //로그인 HTML을 넣어줌
+                document.getElementById("container").innerHTML = loginHTML;
+            });
+        }
+
+        function show() {
+            let showHTML = "";
+            let index = 1;   
+            showHTML += `<table>
+                            <tr>
+                                <td>순서</td>
+                                <td>아이디</td>
+                                <td>비밀번호</td>
+                            </tr>
+                            `;
+            userInfo.forEach(function(val, key){
+                showHTML += "<tr><td>" + index++ + "</td>" + "<td>" + key + "</td>" + "<td>" + val + "</td></tr>"
+            });
+            showHTML += "</table>";
+            showHTML += "<div>";
+            showHTML += "<button onclick='reset()'>확인</button>";
+            showHTML += "</div>";
+            showHTML += `<br><hr><br>
+                        <h2>화면설명</h2>
+                        <p>1. 회원목록을 볼 수 있는 화면입니다.<br>
+                            2. 회원가입을 완료하면 해당 화면에서 확일 할 수 있습니다.<br>
+                            3. 기본값으로 admin을 추가해두었습니다.<br>
+                            4. 회원 목록은 자바스크립트 변수로 만들었기 때문에 새로고침하면 초기화가 됩니다.<br>
+                            5. 확인 버튼을 누르면 로그인 화면으로 돌아갑니다.<br>
+                        <br>
+                        <h2>구성요소</h2>
+                        <ol>
+                            <li>1. 확인버튼</li>
+                        </ol>`;
+            document.getElementById("container").innerHTML = showHTML;
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            //페이지 로딩시 loginHTML을 넣어줌
+            document.getElementById("container").innerHTML = loginHTML;
+        });
+
+        function reset() {
+            document.getElementById("container").innerHTML = loginHTML;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="menuNav">
+            <div id="logoDiv">
+                <a href="login.html"><img id="logoImg" src="img/logo.jpg" alt="로고.jpg"></a>
+            </div>
+            <div id="menuDiv">
+                <ul id="menuUl">
+                    <li><a href="junho.html">차량종류</a></a></li>
+                    <li><a href="dk.html">슬라이드메뉴</a></li>
+                    <li><a href="yj.html">자동슬라이드</a></li>
+                </ul>
+                <ul id="logOut">
+                    <!-- <li><a href="login.html" onclick="localStorage.removeItem('loginInfo')">로그아웃</a></li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1 id="loginUserId">로그인을 해주세요!</h1>
+    <hr><br>
+    <div id="container">
+        
+    </div>
+</body>
+</html>

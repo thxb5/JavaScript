@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <title>문제</title>
+    <style>
+        
+    </style>
+    <script>
+        $(function(){
+            $(".myBtn").click(function(){
+                $("#fold").slideToggle();            
+            });
+        });        
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Read More Read Less Button</h1>
+        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab eos modi sunt possimus odio quaerat tempore repellendus, sit expedita odit nesciunt beatae tempora in nulla </span>
+        <span>...</span>
+        <span id="fold">doloribus voluptatum soluta ea accusamus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab eos modi sunt possimus odio quaerat tempore repellendus, sit expedita odit nesciunt beatae tempora in nulla doloribus voluptatum soluta ea accusamus.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab eos modi sunt possimus odio quaerat tempore repellendus, sit expedita odit nesciunt beatae tempora in nulla doloribus voluptatum soluta ea accusamus.</span>
+    </div>
+
+    <button id="test" style="font-size: 20px;" class="myBtn">Read less</button>
+
+    
+</body>
+</html>

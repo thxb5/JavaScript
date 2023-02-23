@@ -1,0 +1,48 @@
+1103-008.html
+CSS
+
+
+style tag 아래에 h1 or p 등 { 중괄호 열면 안에 작성 가능
+
+속성: 속성값;
+ex)
+<style>
+        h1 {
+            font-size: 60px;
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+text-decoration에서 underline,overline,line-through 가능
+
+
+# ff ff ff
+
+10진수
+0 1 2 3 4 5 6 7 8 9
+
+16진수
+0 1 2 3 4 5 6 7 8 9 a b c d e f
+
+RGB 컬러값 16진수로 표현
+#ff 00 00 red
+#00 ff 00 green
+#00 00 ff blue
+#ff ff ff white
+#00 00 00 black
+
+어느 정도의 색상값은 외워야 한다
+
+
+글자 두께는 font-weight의 수치로 표현 - bold x
+
+*자동 글씨 lorem
+
+
+font-family: Arial, Helvetica, sans-serif;
+               맑은고딕, 돋움, 굴림;
+
+왜 3개나 넣느냐 - 맨 첫번째 부터 지워지면 대체할 수 있게 

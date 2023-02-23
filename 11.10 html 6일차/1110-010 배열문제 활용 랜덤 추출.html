@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열문제를 통한 랜덤 추출</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #galleryZone {
+            text-align: center;            
+        }
+    </style>
+</head>
+<body>
+    <div id="galleryZone">
+        <p><img src="images/pic_1.jpg" alt="1번 이미지" id="photo"></p>
+        <p>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+            <!-- 0은 false값을 대신, 1은 true값을 대신한다 -->
+        </p>
+    </div>
+    
+    <script>
+        let num = 1;
+
+        function gallery(direct) {
+            if(direct) {
+                if(num == 8) return;
+                num++;
+            } else {
+                if(num == 1) return;
+                num--;
+            }
+            // num == 8은 8이 안되었을 때, 숫자를 더해서 올려줘라
+
+            let imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
+        }
+    </script>
+</body>
+</html>

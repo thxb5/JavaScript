@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style> 
+        #text1 .type1 {
+            transition-delay: 0;
+        }
+        #text1 .type2 {
+            transition-delay: 0.5s;
+        }             
+        #text1.active > div {
+            transform: translateX(0);
+            opacity: 1;
+        }           
+        #page1 > div {
+            margin: 50px 20px;
+            padding: 10px;
+            float: left;            
+            opacity: 0;            
+            transform: translateX(-100px);
+            transition: all 0.4s;
+        }        
+    </style>
+</head>
+<body>  
+    <div>
+        <section id="page1">
+            <div class="type1">ani</div>
+            <div class="type2">ani</div>
+        </section>
+    </div>
+
+    <script>
+        $(function(){
+            let t = 0;
+
+            setTimeout(function(){
+                $("body").animate({"scrollX": "0px"}, 300, function() {
+                    $("text1").addClass("active")
+                
+                $(window).scroll(function(){
+                    t = $(window).scrollTop();
+
+                    if(t< $(".text1").offset().top){
+                        $("text1").addClass("active");
+                    }
+                });                
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>

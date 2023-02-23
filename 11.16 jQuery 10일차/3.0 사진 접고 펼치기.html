@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <title>사진 크기 변화</title>
+    <style>
+        #img {
+            width: 300px;
+            height: 400px;
+        }
+        
+        p {
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            /* border: 10px solid black;  */
+        }
+
+        /* 줄어들 때 p값의 너비를 안잡으면 블록태그라 우측 끝까지 먹기 때문에 사진이 줄어드는 데에 시간이 오래 걸린다. */
+        
+
+        button:hover {
+            background: #999;
+            color: #000;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".btn1").on("click", function(){
+                $("p").animate({"width":"0"}, 1000)
+            });
+            $(".btn2").on("click", function(){
+                $("p").animate({"width":"300px"}, 300)
+            });
+        });
+    </script>
+</head>
+<body>
+    <p><img src="iu.jpg" alt="아이유이미지" id="img" class="iu"></p>
+    <button class="btn1">hide</button>
+    <button class="btn2">show</button>
+
+    <!-- 처음에 img값을 수식에 넣어서 줄였는데 그렇게 하면 줄어들 때 이미지 자체가 찌그러지기 때문에 이미지를 감싸는 p나 div같은 태그를 줄이는게 자연스럽다 -->
+</body>
+</html>

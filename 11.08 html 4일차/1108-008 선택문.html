@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문</title>
+    <script>
+        var num = prompt("좋아하는 숫자가 뭐에요?");
+        
+        if(num % 2 == 0) {
+            document.write("당신이 좋아하는 숫자는 짝수이네요");
+        } else {
+            document.write("당신이 좋아하는 숫자는 홀수이네요");
+        }
+
+         
+
+        var jumsu = prompt("수학점수 몇점이에요?");
+
+        if(jumsu >= 90 && jumsu <= 100) {
+            document.write("A학점이네요");
+        } else if(jumsu >= 80 && jumsu < 90) {
+            document.write("B학점이네요");
+        } else if(jumsu >= 70 && jumsu < 80) {
+            document.write("C학점이네요");
+        } else if(jumsu >= 60 && jumsu < 70) {
+            document.write("D학점이네요");
+        } else {
+            document.write("F학점이네요. 계절학기 때 만나요");
+        }   
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

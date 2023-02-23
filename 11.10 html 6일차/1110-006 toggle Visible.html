@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle Visible</title>
+</head>
+<body>
+    <button onclick="openFullScreen()">비디오가 전체창이 됩니다.</button>
+    <p>ESC키를 누르면 빠져나옵니다.</p>
+
+    <video src="beach.mp4" controls id="myVideo"></video>
+
+    <script>
+        let elem = document.getElementById("myVideo");
+        function openFullScreen(){            
+            if(elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if(elem.webkitRequestFullscreen){
+                elem.webkitRequestFullScreen();
+            } else if(elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+        // webkit=크롬,사파리 moz=파이어폭스 o=오페라 ms=익스플로러
+    </script>
+</body>
+</html>

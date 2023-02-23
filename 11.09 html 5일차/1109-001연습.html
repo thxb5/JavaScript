@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAS</title>
+    <script>
+        //5행 5열 표를 만들고, 데이터가 1부터 25까지 출력되도록 작성해주세요
+        let num = 1;
+        let t ="<table border='1'>";
+        for(let i = 1; i <=5; i++) {
+            t +="<tr>";
+            for(let k = 1; k <=5; k++){
+                t +="<td>" + num + "</td>";
+                num++;
+            }
+            t += "</tr>";
+            // t=t+"</tr>"와 같이 +=는 자기 자신을 더해준다
+        }
+
+        t += "</table>";
+
+        document.write(t);
+    </script>
+   
+</head>
+<body>
+  
+</body>
+</html>

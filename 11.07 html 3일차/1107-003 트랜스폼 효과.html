@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼을 이용한 효과 만들기</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            /* ul 포함 하위 태그들 필수암기 */
+        }
+
+        .prod-list li {
+            position: relative;
+            float: left;
+            padding: 0;
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .caption {
+            position: absolute;
+            top: 200px;
+            /* img height값만큼 내려와야 함 */
+            width: 300px;
+            height: 200px;
+            transition: 0.3s;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            opacity: 0;
+            /* 투명도 */
+        }
+
+        li:hover .caption {
+            opacity: 1;
+            transform: translateY(-200px);
+            /* 브라우저 기준 내려가는건 +값, 올라가는건 -값 */
+        }
+
+        h2, p {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>오늘은 월요일</h1>
+    <div id="container">
+        <ul class="prod-list">
+            <li>
+                <img src="iu.jpg" alt="아이유이미지">
+                <div class="caption">
+                    <h2>상품1</h2>
+                    <p>텍스트 설명부분</p>
+                    <p>가격: 12,345원</p>
+                </div>
+            </li>
+            <li>
+                <img src="iu.jpg" alt="아이유이미지">
+                <div class="caption">
+                    <h2>상품2</h2>
+                    <p>텍스트 설명부분</p>
+                    <p>가격: 12,345원</p>
+                </div>
+            </li>
+            <li>
+                <img src="iu.jpg" alt="아이유이미지">
+                <div class="caption">
+                    <h2>상품3</h2>
+                    <p>텍스트 설명부분</p>
+                    <p>가격: 12,345원</p>
+                </div>
+            </li>
+        </ul>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항조건연산자</title>
+    <script>
+        // var a = 5;
+        // var b = 10;
+        // var result = a > b ? "오늘 가야될까?": "그냥 집으로 가자";
+        // 뒤에 물음표까지 문법임
+        // document.write(result);
+
+        var name = prompt("이름이 뭐에요?");
+        var height = prompt("키가 몇이세요?");
+        var weight = prompt("몸무게가 몇이에요?");
+        // ***prompt 중요함
+        
+        var normal_w = (height - 100) * 0.9;
+        // 평균체중
+
+        var result = weight >= normal_w -5 && weight <= normal_w +5;
+        // 오차범위 + - 5 를 준것
+
+        result = result ? " 적정 체중 오케이" : "적정 체중 노우";
+        document.write(name + "님은" + result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

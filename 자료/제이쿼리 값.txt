@@ -1,0 +1,5 @@
+https://developers.google.com/speed/libraries#jquery
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+버전이 낮은걸 써야 오류가 잘 안난다

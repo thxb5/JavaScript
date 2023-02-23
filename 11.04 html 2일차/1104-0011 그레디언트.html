@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그레디언트</title>
+    <style>
+        #box {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background: red;
+            animation-name: thxb;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(.8,-0.55,.61,1.31);            
+            /* 애니메이션 다 외워야함 */
+            /* animation-timing-function: linear; */
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: normal; 일반적*/
+            /* animation-direction: alternate; 되돌아옴 */
+        }
+
+        /* keyframe 부분은 저장해놨다가 참고 */
+        @keyframes thxb {
+            from {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+
+            25% {
+                position: absolute;
+                top: 50px;
+                left: 500px;
+            }
+
+            50% {
+                position: absolute;
+                top: 500px;
+                left: 500px;
+            }
+
+            75% {
+                position: absolute;
+                top: 500px;
+                left: 50px;            
+            }
+
+            to {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="box">
+
+
+    </div>
+    
+</body>
+</html>

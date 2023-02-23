@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우객체</title>
+    <style>
+        body, p {
+            margin: 0;
+            padding: 0;
+        }
+        map {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="iu.jpg" alt="" usemap="#intro" alt="아이유">
+        <map name="intro" id="intro">
+            <!-- coords는 좌표값, x,y,반지름 -->
+            <area shape="rect" coords="100,100,50" href="#" alt="" onclick="window.close();">
+            <!-- rect 다각형, circle 원, poly 다각형 -->
+        </map>
+    </p>
+    
+</body>
+</html>

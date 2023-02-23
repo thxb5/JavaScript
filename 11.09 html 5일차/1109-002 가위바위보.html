@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위 바위 보 게임</title>
+    <script>
+        document.write("<h1>가위 바위 보 맞추기 게임");
+
+        let game = prompt("가위, 바위, 보 중에서 선택해주시면 감사");
+        let gameNum;
+        switch(game) {
+            case "가위" : gameNum = 1;
+            break;
+        //switch, case, break 구성
+
+            case "바위" : gameNum = 2;
+            break;
+
+            case "보" : gameNum = 3;
+            break;
+            default: alert("잘못 입력하면 안돼요");
+            location.reload();        
+        }
+
+        let com = Math.ceil( Math.random() * 3);        
+        console.log(com);
+        //  random 값은 0.0000000001~0.9999999999까지
+        // 실무에서 작업할 때에도 콘솔을 계속 확인해야한다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

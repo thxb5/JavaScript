@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle Visible</title>
+</head>
+<body>
+    <div>
+        <p>Click the radio button to toggle between password visibility:</p>
+    </div>
+
+    Password: <input type="password" value="FakePSW" id="myInput"><br><br>
+    <input type="checkbox" onclick="myFunction()"> Show Password
+
+    <script>
+        function myFunction(){
+            let x = document.getElementById("myInput");
+            if(x.type == "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        // document.querySelector("#pwChgBtn").onclick = function(){
+        //     if(this.checked){
+        //         document.querySelector("#password").type = "text";
+        //     } else {
+        //         document.querySelector("#password").type = "password";
+        //     }
+        // }
+    </script>
+</body>
+</html>

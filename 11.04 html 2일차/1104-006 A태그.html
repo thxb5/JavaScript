@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+    <style>
+        #wrapper {
+            width: 800px;
+            height: 100vh;
+            border: 2px solid black;
+            margin: 0 auto;
+            /* 상단0 우측오토 하단0 좌측오토지만 상단 우측만으로 표현 가능*/
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -o-border-radius: 50px;
+            border-radius: 50px;
+            
+        
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            width: 100px;
+            height: 80px;
+            padding: 20px;
+            border: 8px;
+            margin: 0 auto;
+            background: #ccc;
+            box-sizing: border-box;
+        }
+
+        /* p:before {
+            content:"";
+            display: block;
+            background: orange;
+            width: 100px;
+            height: 30px;
+            border: 2px solid black;
+        }
+
+        p:after {
+            content:"";
+            display: block;
+            background: red;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: 2px solid black;
+        } */
+
+        ul li:nth-child(2n) {
+            color: red;
+        }
+        /* odd는 홀수 even는 짝수 */
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <a href="#">링크1</a>
+        <p>오늘</p>
+
+    </div>
+
+    <ul type="square">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Chapter 04-04 - jQuery 최고의 교과서</title>
+<link rel="stylesheet" href="1116-005-css/normalize.css">
+<link rel="stylesheet" href="1116-005-css/main.css">
+<script src="1116-005-js/vendor/jquery-1.10.2.min.js"></script>
+<script src="1116-005-js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script>
+    $(function(){
+        let duration = 300;
+        let $aside = $(".page-main > aside");
+        let $asideButton = $aside.find("button").on("click", function(){
+            if($aside.hasClass("open")){
+                $aside.stop().animate({left:"-350px"},duration);
+                $asideButton.find("img").attr("src","1116-005-img/btn_open.png");
+            } else {
+                $aside.stop().animate({left:"-70px"},duration);
+                $asideButton.find("img").attr("src","1116-005-img/btn_close.png");
+            }
+            $aside.toggleClass("open");
+        })
+    })
+</script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <h1>Creative jQuery Sample</h1>
+</header>
+
+<div class="page-main" role="main">
+    <aside>
+        <ul>
+            <li><a href="#"><img src="1116-005-img/01_aside.png"></a></li>
+            <li><a href="#"><img src="1116-005-img/02_aside.png"></a></li>
+            <li><a href="#"><img src="1116-005-img/03_aside.png"></a></li>
+        </ul>
+        <button><img src="1116-005-img/btn_open.png"></button>
+    </aside>
+</div>
+
+<footer class="page-footer" role="contentinfo">
+    <small class="copyright">COPYRIGHT &copy; <a href="http://www.shiftbrain.co.jp" target="_blank">SHIFTBRAIN Inc.</a></small>
+</footer>
+
+</body>
+</html>

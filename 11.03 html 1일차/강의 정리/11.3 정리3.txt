@@ -1,0 +1,90 @@
+1103-007.html
+
+https://filezilla-project.org/
+파일질라 다운
+
+https://www.dothome.co.kr/
+무료 호스팅 사이트
+웹호스팅-무료호스팅-신청하기
+
+
+파일질라 왼쪽이 내컴퓨터, 오른쪽이 서버
+
+파일질라에 접속-html폴더-파일2개
+
+html폴더안쪽으로 들어가서 setup_finish.html 파일을 지워버린다.
+
+index.html 진입했을 때 제일 첫 페이지
+
+-------------------------------
+
+input type=tel 번호입력
+input type=number 위아래 변경 가능한 숫자 - 뒤에 step=10 10씩 증가,감소
+
+ex)
+<body>
+    <form action="action.php">
+        <input type="tel"><br><br>
+        <input type="number" step="10">
+    </form>
+</body>
+
+
+hidden 속성
+
+
+select tag - 선택지 고를 수 있음 --size를 옆에 입력하면 한번에 표시되는 양이 달라짐
+하위 tag로 option
+
+ex)
+<select name="" id="" size="5">
+            <option value="">건축공학과</option>
+            <option value="">도시공학과</option>
+            <option value="">자동차공학과</option>
+            <option value="">컴퓨터공학과</option>
+            <option value="">토목공학과</option>
+</select>
+
+tag 뒤에 autofocus를 넣어주면 페이지를 접속했을때 포커스가 잡힌다
+
+ex)
+<select name="" id="" autofocus>
+
+textarea tag 뒤에 readonly를 적으면 안에 내용 수정 불가
+
+
+
+라이센스 조심하는 것에 폰트가 가장 중요
+
+woff (web open font format)
+eot (embded open type)
+
+웹폰트용 폰트포맷
+
+
+
+
+Cascading Style Sheet
+꾸며주는 역할
+
+작성규칙
+1. 소문자로 작성하는 것이 기본적인 원칙
+2. 속성: 속성값;
+3. 줄맞춤 잘 해줘야 한다....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

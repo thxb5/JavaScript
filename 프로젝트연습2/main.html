@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            //세션 체크
+            if(localStorage.getItem("loginInfo") == null){
+                alert("로그인 정보가 없습니다!");
+                window.open("login.html", "_self");
+            } else {
+                let {loginUserId, loginUserPw} = JSON.parse(localStorage.getItem("loginInfo"));                
+                document.getElementById("loginUserId").innerHTML = loginUserId + "님 반갑습니다!";
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="menuNav">
+            <div id="logoDiv">
+                <a href="main.html"><img id="logoImg" src="img/logo.jpg" alt="로고.jpg"></a>
+            </div>
+            <div id="menuDiv">
+                <ul id="menuUl">
+                    <li><a href="junho.html">차량종류</a></a></li>
+                    <li><a href="dk.html">슬라이드메뉴</a></li>
+                    <li><a href="yj.html">자동슬라이드</a></li>
+                </ul>
+                <ul id="logOut">
+                    <li><a href="login.html" onclick="localStorage.removeItem('loginInfo')">로그아웃</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1 id="loginUserId">로그인을 해주세요!</h1>
+    <hr><br>
+</body>
+</html>

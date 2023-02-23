@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+    <title>자동으로 바뀌는 사진</title>
+    <style>
+        .container {            
+            width: 100%;
+            height: 300px;                      
+        }
+
+        #one {
+            position: relative;
+            top: -8px;
+            left: -8px;  
+            display: none;            
+        }
+
+        #two {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;          
+        }
+
+        #three {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;            
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            changeIMG();
+        });
+
+        function changeIMG() {
+            $(".container").atrr("src", "2.jpg")
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="1.jpg" alt="" id="one">
+        <img src="2.jpg" alt="" id="two">
+        <img src="3.jpg" alt="" id="three">
+    </div>
+</body>
+</html>

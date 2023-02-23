@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/fb6b0b5ebd.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            body {
+                /* line-height: 1; */
+                font-family: "Open Sans", sans-serif;
+                font-size: 1em;
+                background-color: #f1f1f1;
+                color: #555;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .container {
+                margin-top: 35px;
+            }
+            nav > ul > li {
+                position: relative;
+                float: left;
+                width: 120px;
+                height: 40px;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 13px;
+                border-left: 1px solid #ccc;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            nav > ul > li:first-child {
+                border-left: none;
+            }
+            nav > ul > li > a {
+                display: block;
+                width: 100%;
+                line-height: 40px;
+                text-decoration: none;
+                background: #eaeaea;
+                color: #666;
+                transition: background 0.4s, color 0.4s;
+            }
+            nav > ul > li:hover > a,
+            nav > ul > li > a.over {
+                font-weight: 600;
+                background: red;
+                color: black;
+            }
+            nav .sub {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 40px;
+                width: 100%;
+            }
+        nav .sub li {
+            border-bottom: 1px solid #eaeaea;
+        }
+        nav .sub li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #666;
+            background: #fff;
+        }
+        nav .sub li a:hover,
+        nav .sub li a:focus {
+            background:rgb(245, 194, 203);
+        }
+
+        .fa-solid{
+            display: none;
+        }
+        .search{
+            width: 120px;
+            height: 40px;
+        }
+        .small{
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 12px;        
+        }
+        .picture{
+            float: left;
+            margin-left: -1300px;
+            width: 900px;
+            -webkit-transition: margin-left 0.8s;
+            transition: margin-left 0.8s;
+        }
+        .handle {
+            float: left;
+            width: 20px;
+            height: 60px;
+            background: rgb(234, 6, 6);
+            cursor: pointer;
+            border-radius: 0 10px 10px 0;
+        }
+        .picture.on {
+            margin-left: 0;
+        }
+        .dark-mode {
+            background: #000;
+            color: #fff;
+        }
+        .pic{
+            display: none;
+        }
+        .pic.on1{
+            display: block;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        
+        .sticky + .content {
+          padding-top: 102px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="menuNav">
+            <div id="logoDiv">
+                <a href="main.html"><img id="logoImg" src="img/logo.jpg" alt="로고.jpg"></a>
+            </div>
+            <div id="menuDiv">
+                <ul id="menuUl">
+                    <li><a href="junho.html">차량종류</a></a></li>
+                    <li><a href="dk.html">슬라이드메뉴</a></li>
+                    <li><a href="yj.html">자동슬라이드</a></li>
+                </ul>
+                <ul id="logOut">
+                    <li><a href="login.html" onclick="localStorage.removeItem('loginInfo')">로그아웃</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1 id="loginUserId"></h1>
+    <hr><br>
+    <h1>슬라이드 메뉴</h1>
+    <div class="container">
+        <nav id="myHeader">
+            <ul>
+                <li>
+                    <a href="#" data-bg="#a0c800"><i class="fa-solid fa-arrow-down"></i>내차팔기</a>
+                    <ul class="sub">
+                        <li><a href="#">내차팔기홈서비스</a></li>
+                        <li><a href="#">법인차매각신청</a></li>
+                        <li><a href="#">폐차신청</a></li>
+                        <li><a href="#">내차팔기고객후기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-bg="#00c8c3"><i class="fa-solid fa-arrow-down"></i>내차사기</a>
+                    <ul class="sub" >
+                        <li><a href="#">차량검색</a></li>
+                        <li><a href="#">홈서비스타임딜</a></li>
+                        <li><a href="#">판매준비차량</a></li>
+                        <li><a href="#">3D라이브뷰</a></li>
+                        <li><a href="#">최근 본 차량</a></li>
+                        <li><a href="#">내차사기 고객후기</a></li>
+                        <li><a href="#">리스차량</a></li>
+                        <li><a href="#">브랜드인증관</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-bg="#a0c800"><i class="fa-solid fa-arrow-down"></i>렌트</a>
+                    <ul class="sub">
+                        <li><a href="#">중고차렌트</a></li>
+                        <li><a href="#">렌트특가</a></li>
+                        <li><a href="#">신차렌트</a></li>
+                        <li><a href="#">렌트지점</a></li>
+                        <li><a href="#">렌트일반정비소</a></li>
+                        <li><a href="#">렌트사고정비소</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-bg="#00c8c3"><i class="fa-solid fa-arrow-down"></i>금융</a>
+                    <ul class="sub">
+                        <li><a href="#">할부</a></li>
+                        <li><a href="#">리스</a></li>
+                    </ul>
+                </li>
+                <li class="small">
+                    <a href="#" data-bg="#a0c800">홈서비스타임딜</a>
+                </li>
+                <li class="small">
+                    <a href="#" data-bg="#00c8c3">브랜드인증관</a>
+                </li>
+                <li class="small">
+                    <a href="#" data-bg="#a0c800">전국직영점</a>
+                </li>
+                <li class="small">
+                    <a href="#">위클리특가</a>
+                </li>
+                <input type="search" placeholder="검색어입력" class="search">
+                <input type="submit" value="검색">
+                <button onclick="myFunction1()">다크모드로 보기</button>
+            </ul>
+        </nav>
+        <br><br><h1> 목적 </h1> <br>
+        복습과 적용 : 마우스 오버 <br><br>
+        (슬라이드 다운 + 폰트어썸이미지불러오기 + 이미지 토글 + 가상요소 활용) <br><br>
+
+        <h1>작성순서</h1><br>
+        바디 -> 스타일 -> 스크립트
+        <h1>구성</h1><br><br>
+
+        <h2>1. 바디</h2><br><br>
+
+        <img src="img/body.png" alt="11" class="picture"><br>
+        <div class="handle"></div><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h2>2. 스타일</h2><br>
+
+        <ol>
+            <li>nav > ul > li <button class="more">more</button> </li>
+                <img src="img/style li.png" alt="" class="pic">
+            <li>nav > ul > li > a </li>
+                <img src="img/style a.png" alt=""class="pic">
+            <li>nav > ul > li:hover > a,<br>
+            nav > ul > li > a.over</li>
+            <img src="img/style over.png" alt=""class="pic">
+        </ol>
+
+        <h2>3. 스크립트</h2><br>
+
+            슬라이드 다운 + 이미지 토글<br>
+            <img src="img/script li.png" alt=""><br><br>
+
+            가상요소활용(data-bg)<br>
+            <img src="img/script a.png" alt=""><br>
+    </div>
+ <script>
+
+     function myFunction1() {
+         let element = document.body;
+         element.classList.toggle("dark-mode");
+     }
+
+     window.onscroll = function() {myFunction()};
+
+     let header = document.getElementById("myHeader");
+     let sticky = header.offsetTop;
+
+     function myFunction() {
+         if(window.pageYOffset > sticky){
+             header.classList.add("sticky");
+         } else {
+             header.classList.remove("sticky");
+         }
+     }
+
+     $(function(){
+
+        //세션 체크
+        if(localStorage.getItem("loginInfo") == null){
+            alert("로그인 정보가 없습니다!");
+            window.open("login.html", "_self");
+        } else {
+            let {loginUserId, loginUserPw} = JSON.parse(localStorage.getItem("loginInfo"));                
+            document.getElementById("loginUserId").innerHTML = loginUserId + "님 반갑습니다!";
+        }
+
+        $('nav > ul > li').hover(
+            function(){
+                    $(this).find(".sub").stop().slideDown(300);
+                    $(this).find(".fa-arrow-down").stop().slideDown(300);
+            },
+            function(){
+                    $(this).find(".sub").stop().slideUp(300);
+                    $(this).find(".fa-arrow-down").stop().slideUp(300);
+            });
+
+            
+        $('nav > ul > li > a').hover(
+            function(){
+                let overColor=$(this).attr("data-bg");
+                $(this).stop().animate({"background-color":overColor},300);
+            },
+            function(){
+                let overColor=$(this).attr("data-bg");
+                $(this).stop().animate({"background-color":"#eaeaea"},300);
+            }
+        )
+        
+        $(".handle").click(function(){
+            $(".picture").toggleClass("on");
+        })
+
+        $("button").click(function(){
+            $(".pic").toggleClass("on1")
+        })
+    });
+</script>
+</body>
+</html>

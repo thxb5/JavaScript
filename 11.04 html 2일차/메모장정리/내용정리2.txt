@@ -1,0 +1,66 @@
+1104-007
+
+position: fixed;
+브라우저 기준으로 고정시켜줌
+
+딩뱃폰트: 타이핑을 하면 도형이 입력되는 폰트
+폰트어썸 사이트
+무료 폰트 이미지
+
+position: relative;
+position: absolute;
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+두개 같이 쓰였을 때는
+부모요소나 조상요소중에서 relative를 가지고 있고 그의 자식요소나 손자요소가
+absolute의 포지션 속성을 가지고 있다면 해당 absolute요소의 기준값은
+브라우저가 아니고 relative가 기준값이 된다...
+
+
+박스 5개중 마지막 박스 가운데 넣기 블로그 정리
+
+크로스 브라우징 정리 블로그
+http://hong.adfeel.info/frontend/position%EC%9C%BC%EB%A1%9C-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/
+
+
+애플로고 원 가운데로 넣기
+
+
+
+1104-009
+
+박스 안에 색상을 그레디언트 색상으로 표현
+
+repeating 그레디언트에서 수치값이 red와 yellow가 겹쳐야 또렷하게 나온다
+
+
+https://cubic-bezier.com/
+애니메이션 속도값 대입사이트
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

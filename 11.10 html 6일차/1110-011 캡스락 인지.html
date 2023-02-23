@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캡스락 인지</title>
+    <style>
+        #text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="myInput" value="캡스락인지">
+    <p id="text">경고 캡스락이 켜졌어요</p>
+
+    <script>
+        let input = document.getElementById("myInput");
+        let text = document.getElementById("text");
+        input.addEventListener("keyup", function(e) {
+            if(e.getModifierState("CapsLock")) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        });
+        // 이벤트는 키보드나 마우스를 눌렀을 때 일어나는 동작들을 말함
+        // keyup은 키보드를 눌렀다가 뗄 때 반응값
+    </script>
+</body>
+</html>

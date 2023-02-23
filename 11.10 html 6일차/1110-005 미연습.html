@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle Visible</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p>Click the radio button to toggle between password visibility:</p>
+
+    </div>
+
+    <form>
+        Password: <input id="psw" type='password'><br><br>
+        <input id="chkb" type="checkbox"> Show Password
+    </form>
+    
+    <script>
+         $(function(){
+            $("chkb").click(function(){
+                $("psw").toggleClass("text");                
+                
+            });
+        });
+    </script>
+</body>
+</html>

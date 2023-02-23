@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title {
+            margin: 0;
+            margin-bottom: 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #555;
+        }
+        .container {
+            margin-top: 35px;
+            min-width: 440px;
+        }
+        .picture {
+            margin-top: 30px;
+            width: 1220px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .picture ul {
+            float: left;
+            margin-left: -1200px;
+            width: 1200px;
+            -webkit-transition: margin-left 0.8s;
+            transition: margin-left 0.8s;
+            /* border: 2px solid red; */
+        }
+        .picture ul.on {
+            margin-left: 0;
+        }
+        .picture li {
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .picture img {
+            max-width: 100%;
+            height: auto;
+        }
+        .picture .handle {
+            float: left;
+            width: 20px;
+            height: 200px;
+            background: #333;
+            cursor: pointer;
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>basic :: jQuery example</h1>
+
+
+    <div class="picture">
+        <ul>
+            <li><img src="work1.jpg" alt=""></li>
+            <li><img src="work2.jpg" alt=""></li>
+            <li><img src="work3.jpg" alt=""></li>
+            <li><img src="work4.jpg" alt=""></li>
+            <li><img src="work5.jpg" alt=""></li>
+            <li><img src="work6.jpg" alt=""></li>
+        </ul>
+        <div class="handle"></div>
+    </div>
+
+    <script>
+        $(function(){
+            $(".handle").click(function(){
+                $(".picture ul").toggleClass("on");
+            });
+        });
+
+        // $('#test').hover(function() {
+        // $(this).css("color", "red");
+        // })
+
+        // jQuery에서 마우스 올렸을 때
+
+        // function(){
+        // $(this).css("color", "red");
+        // }
+        
+        // jQuery에서 마우스 땠을 때
+
+        
+        
+    </script>
+</body>
+</html>

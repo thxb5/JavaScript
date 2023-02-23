@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .txt1 {                      
+            width: 50px;
+            text-align: center;
+            background: red;
+          
+        }
+
+        * {
+            margin: 0;
+        }
+        /* 기본적으로 8px 마진이 있기 때문에 전체인 *에 마진을 줌 */
+        
+    </style>
+    <script>
+        $(function(){
+            $(".txt1")
+            .animate({marginLeft:"200px"},1000)
+            .animate({marginTop:"200px"},1000)
+            .animate({marginLeft:0},1000)
+            .animate({marginTop:0},1000)
+                        
+        });
+    </script>
+</head>
+<body>
+    <p class="txt1">버튼</p>
+    
+</body>
+</html>

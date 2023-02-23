@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 반응에 의한 메뉴 보이기</title>
+    <style>
+        body {
+          margin: 0;
+          background-color: #f1f1f1;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #navbar {
+          background-color: white;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          display: block;
+          transition: top 0.3s;
+        }
+        
+        .one {
+          float: right;          
+          color: #000;
+          text-align: center;
+          margin: 0;
+          padding: 20px;
+          text-decoration: none;
+          font-size: 17px;
+          top: 30px;
+        }
+
+        #two {
+            color: 000;
+            padding: 10px;
+            float: left;
+            text-align: center;  
+            font-size: px;      
+        }
+        
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <h1 id="two">CompanyLogo</h1>
+        <a href="#" class="one">Home</a>
+        <a href="#" class="one">News</a>
+        <a href="#" class="one">Contact</a>
+    </div>
+
+    <div style="padding: 15px 15px 5000px">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque enim velit aspernatur dolores deserunt, assumenda vitae. Est corporis voluptatem autem molestias soluta deleniti cumque dolore eligendi, ullam, iusto eos doloremque.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum rem magni quos dolore quaerat nostrum dignissimos voluptates nihil voluptas ducimus doloremque suscipit, explicabo voluptate totam. Cupiditate distinctio odio quos quod.
+        </p>
+    </div>
+    <script>
+
+        let arr = [#navbar a];
+        document.write(arr.reverse());
+        
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.height = "100px";
+                document.getElementById(".one").style.padding = "17px";
+                document.getElementById("two").style.padding = "10px";
+                
+            } else {
+                document.getElementById("navbar").style.height = "120px";
+                document.getElementById("one").style.padding = "30px";
+                document.getElementById("two").style.padding = "0";
+                
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         .product img {
+            width: 300px;
+            height: 200px;
+        }
+        .product span {
+            display: block;
+            width: 300px;
+        }       
+
+        .product {
+            animation: fadein 2s;  
+            float: left;
+            margin-left: 10px;
+            text-decoration: none;
+            border: 1px solid black;
+            height: 330px;
+        }
+        
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .myBtn {         
+            float: left;
+            width: 100px;
+            height: 70px;
+            border: 1px solid #e9e9e9;
+            border-radius: 4px;
+            font-size: 18px;
+            background: rgb(220, 28, 28);
+            color: white;
+            font-weight: bolder;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        
+        .myBtn:hover {
+            cursor: pointer;
+            width: 120px;
+            height: 85px;
+        }
+
+        .product:hover {
+            cursor: pointer;
+        }
+
+        .menu {
+            width: 100%;
+            height: 120px;
+        }
+
+        #note {
+            overflow: hidden;
+            width: 100%;            
+        }
+        
+        .name {
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        
+        .price {
+            font-weight: bolder;
+            font-size: 20px;
+            color: rgb(211, 46, 46);
+        }
+
+        .etc {
+            color: black;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="menuNav">
+            <div id="logoDiv">
+                <a href="main.html"><img id="logoImg" src="img/logo.jpg" alt="로고.jpg"></a>
+            </div>
+            <div id="menuDiv">
+                <ul id="menuUl">
+                    <li><a href="junho.html">차량종류</a></a></li>
+                    <li><a href="dk.html">슬라이드메뉴</a></li>
+                    <li><a href="yj.html">자동슬라이드</a></li>
+                </ul>
+                <ul id="logOut">
+                    <li><a href="login.html" onclick="localStorage.removeItem('loginInfo')">로그아웃</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1 id="loginUserId"></h1>
+    <hr><br>
+    <h1>차량 종류</h1>  
+    <div class="menu">
+        <p>
+            <button class="myBtn" id="all">모든차종</button>
+        </p>
+        <p>
+            <button class="myBtn" id="k">경차</button>
+        </p>
+        <p>
+            <button class="myBtn" id="s">소형차</button>
+        </p>
+        <p>
+            <button class="myBtn" id="m">중형차</button>
+        </p>
+        <p>
+            <button class="myBtn" id="b">대형차</button>
+        </p>
+    </div>                                      
+    <div id="note" class="mode">
+        <div id="K" class="car" type="k">                         
+            <a href="#" class="product">
+                <img src="img/k1.jpg" width="500" height="400">
+                <span class="name">기아 올 뉴 모닝(JA) 프레스티지</span>
+                <span class="price">1,030만원</span>
+                <span class="etc">할부 월 19만원</span>
+                <span class="etc">18년4월식 21,457km 가솔린 화곡</span>
+            </a>
+            <a href="#" class="product">
+                <img src="img/k2.jpg" width="500" height="400">
+                <span class="name">기아 레이 럭셔리</span>
+                <span class="price">950만원</span>
+                <span class="etc">할부 월 18만원</span>
+                <span class="etc">16년8월식 32,287km 가솔린 일산</span>
+            </a>
+        </div>
+        <div id="S" class="car" type="s"> 
+            <a href="#" class="product">
+                <img src="img/s1.jpg" width="500" height="400">
+                <span class="name">현대 엑센트(신형) 위트 디젤 1.6 VGT 스마트</span>
+                <span class="price">490만원</span>
+                <span class="etc">할부 월 9만원</span>
+                <span class="etc">16년1월식 111,496km 디젤 포천</span>
+            </a>
+            <a href="#" class="product">
+                <img src="img/s2.jpg" width="500" height="400">
+                <span class="name">미니 쿠퍼 클럽맨(2세대) D 기본형</span>
+                <span class="price">1,690만원</span>
+                <span class="etc">할부 월 32만원</span>
+                <span class="etc">17년7월식 71,324km 디젤 김포</span>
+            </a>
+        </div>
+        <div id="M" class="car" type="m">                            
+            <a href="#" class="product">
+                <img src="img/m1.jpg" width="500" height="400">
+                <span class="name">기아 더 뉴 K5 2세대 2.0 프레스티지</span>
+                <span class="price">1,890만원</span>
+                <span class="etc">할부 월 35만원</span>
+                <span class="etc">19년3월식 46,290km 가솔린 부산</span>
+            </a>                           
+            <a href="#" class="product">
+                <img src="img/m2.jpg" width="500" height="400">
+                <span class="name">현대 소나타 더 브릴리언트 LPI 프리미엄</span>
+                <span class="price">950만원</span>
+                <span class="etc">할부 월 18만원</span>
+                <span class="etc">14년4월식 97,263km LPG 제주</span>
+            </a>
+        </div>
+        <div id="B" class="car" type="b">
+            <a href="#" class="product">
+                <img src="img/b1.jpg" width="500" height="400">
+                <span class="name">제네시스 G80 (RG3) 가솔린 터보 2.5 AWD</span>
+                <span class="price">5,680만원</span>
+                <span class="etc">할부 월 106만원</span>
+                <span class="etc">20년4월식 21,457km 가솔린 화곡</span>
+            </a>
+            <a href="#" class="product">
+                <img src="img/b2.jpg" width="500" height="400">
+                <span class="name">기아 더 K9 3.8 GDI AWD 플래티넘</span>
+                <span class="price">3,690만원</span>
+                <span class="etc">할부 월 69만원</span>
+                <span class="etc">18년4월식 21,457km 가솔린 화곡</span>
+            </a>            
+        </div>                                   
+    </div>
+    <br><br>
+    <div>
+        <p>1.차량 종류 탭에 접속했을 때, 모든 종류의 차량이 표시됩니다.</p>
+        <p>2.차량 종류 탭에 hover값을 css를 통해 간단히 줬습니다.</p>
+        <p>3.차량 종류 탭을 선택 했을 때, 버튼과 차량 그룹의 이중 for문을 통해 선택한 차종은 나타나고 나머지 차종은 사라지게 됩니다.</p>
+        <p>4.이 과정에서 버튼 클릭시 제품 이미지에 fadeIn 효과가 나타나게 했습니다.</p>
+        <p>5.다시 모든차종 탭을 클릭했을 때 모든 제품이 나타나게 됩니다.</p>
+    </div>
+    <script>
+        $(function(){
+            //세션 체크
+            if(localStorage.getItem("loginInfo") == null){
+                alert("로그인 정보가 없습니다!");
+                window.open("login.html", "_self");
+            } else {
+                let {loginUserId, loginUserPw} = JSON.parse(localStorage.getItem("loginInfo"));
+                document.getElementById("loginUserId").innerHTML = loginUserId + "님 반갑습니다!";
+            }
+
+            let myBtn = $(".myBtn");        
+            let car = $(".car");      
+            for (var i=0; i < myBtn.length; i++){
+                myBtn.eq(i).on("click", function(){
+                    for (var k=0; k < car.length; k++){                      
+                        //버튼 클릭 했을 때 id 속성 값이 all이면
+                        if($(this).attr("id") == "all"){
+                            $(".car").css("display", "");
+                            
+                        //이미지 아이디 값과 id 속성 값이 같으면
+                        } else if($(this).attr("id") == $(".car").eq(k).attr("type")){
+                            $(".car").eq(k).css("display", "");                            
+                        } else {
+                            $(".car").eq(k).css("display", "none");                            
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우 객체</title>
+    <script>
+        let addNum = 0;
+        let subNum = 1000;
+
+        let auto_1 = setInterval(function(){   
+            //setTimeout은 한번만 작동하고 끝남
+            addNum++;
+            //addNum은 0부터 시작
+            console.log("addNum: " + addNum);
+        }, 3000);
+        //3000ms = 3s
+
+        let auto_2 = setInterval(function(){
+            subNum--;
+            //subNum은 1,000부터 시작
+            console.log("subNum: " + subNum);
+        }, 3000);
+
+        //setTimeout과 setInterval은 첫번째 인자로 실행할 코드를 담고있는 함수를 받고, 두번째 인자로 지연 시간을 밀리초 단위로 받는다...
+    </script>
+</head>
+<body>
+    <button onclick="clearInterval(auto_1)">증가 정지시킴</button>
+    <button onclick="clearInterval(auto_2)">감소 정지시킴</button>    
+</body>
+</html>

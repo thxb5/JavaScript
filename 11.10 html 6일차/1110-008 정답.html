@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열문제를 통한 랜덤 추출</title>
+</head>
+<body>
+    <script>
+        let menu = ["짜장면", "돈까스", "된장국", "김치찌개", "회덮밥"];
+
+        let menuNum = Math.floor(Math.random() * menu.length);
+        let result = menu[menuNum];
+        document.write(result);
+        console.log(Math.floor(Math.random() * menu.length));
+        
+    </script>
+</body>
+</html>

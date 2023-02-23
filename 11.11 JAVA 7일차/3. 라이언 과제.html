@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>라이언 제거</title>
+    <style>
+        .lion {
+            font-size: 50px;
+            padding: 5px;            
+        }
+        
+        #Add {
+            margin-left: 20px;
+            
+        }
+
+        #Remove {
+            margin-left: 20px;
+        }
+
+        img.moving {
+            animation: moving 1s linear infinite;                
+        }
+
+        @keyframes moving {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(1000px);
+            }
+        }
+
+       
+    
+    </style>
+</head>
+<body>
+    <h1>Basic :: jQuery example</h1>
+    <img src="Lion.gif" alt="" class="lion"><br>
+    <button class="lion" id="Add">add</button>
+    <button class="lion" id="Remove">remove</button>
+    <script>     
+        
+        $(function(){
+            $("#Add").click(function(){
+                $(".lion").addClass("moving");                
+            });
+            $("#Remove").click(function(){
+                $(".lion").removeClass("moving");
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+비디오 삽입
+
+iframe태그
+
+비디오 자동재생 하고싶으면
+allow="autoplay"
+
+주석처리
+ex) 주석처리 하고싶은 부분 스크랩해서 ctrl+/
+
+a tag는 링크
+br tag는 줄 변경
+
+오디오 삽입
+
+br태그(닫지 않는태그, img, hr(수평선) tag도 같이)
+
+audio tag 넣을때 controls를 같이 넣어줘야한다
+controls tag 뒤에 loop autoplay를 넣으면 무한 반복된다
+muted를 넣으면 음소거(muted를 넣어야지 autoplay가 작동함)
+
+-----------------------------------------------------------------------------------
+
+***블락 개념의 태그 : 한줄 다 먹고 들어가는 태그
+ex)hr, table tag
+
+
+***인라인 개념의 태그 : 한줄에 같은 태그가 여러개 사용될 수 있는 태그
+ex)a tag
+
+-----------------------------------------------------------------------------------
+
+1.블락과 인라인의 관계
+
+1) 블락은 인라인을 감쌀 수 있다.
+2) 블락은 블락을 감쌀 수 있다.
+3) 인라인은 인라인을 감쌀 수 있다.
+***4) 인라인은 절대 블락을 감쌀 수 없다.....
+ex) <a href="http://apple.com"><li>월요일</li></a> X
+     <li><a href="http://apple.com">월요일</a></li> O
+
+
+1103-005.html
+
+***폼태그 무조건 암기
+
+form tag
+
+***Home의 요소들
+
+text, password, submit, reset, value
+
+
+input type= color-색상 파레트 삽입됨
+input type= date-날짜 삽입됨
+input type= datetime-보통 브라우저에서 표시 안되기 때문에 지양
+input type= datetime-local -현지 시간 표현
+input type= week 현재 주를 표현
+input type= file 첨부 파일 버튼 표현
+input type= button 버튼 만들어줌
+button tag랑 똑같이 표현되지만 button tag가 사용하기 더 깔끔하다
+
+
+
+********매우 중요
+1103-006.html
+
+url 태그에는 안에 쓸 placeholder, required 속성 꼭 넣어야함
+
+textarea tag - 글자 입력공간(닫는 tag 위치 바꾸면 안됨)
+cols=글자 수, rows=행의 수
+
+
+name tag에 name이 같으면 하나만 선택 가능
+복수 선택을 가능하게 하려면 내용을 다르게
+
+ex)     <h1>당신의 성별은?</h1>
+        <input type="radio" name="male">여성
+        <input type="radio" name="male">남성<br><br>
+        <input type="submit"><br><br>
+        <h2>당신의 취미를 2가지 이상 선택해 주세요.</h2>
+        <input type="checkbox" name="fishing">낚시
+        <input type="checkbox" name="racing">레이싱
+
+input tag에 password
+autocomplete=true 하면 자동완성, false 하면 자동완성x
+
+
+
+정리
+
+누르는 버튼 이름을 바꾸고 싶으면 뒤에 value 값을,
+누르는 버튼 뒤에 이름을 붙이고 싶으면 name 값을 넣어준다
+
+ex) <input type="checkbox" name="movie">영화보기
+     <input type="submit" value="제출해주세요">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

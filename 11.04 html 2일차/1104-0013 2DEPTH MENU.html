@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2DEPTH MENU</title>
+    <style>
+        .cls001 {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        /* >는 자식요소 표시 */
+        .cls001 > li {
+            /* ul > li로 하면 자식 li와 구분이 안되기 때문 */
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            /* height와 line-height값을 똑같이 줘야한다 */
+            border: 1px solid black;
+            text-align: center;
+            float: left;
+            /* float은 위치값을 어디 줄껀지 표시하는 태그 */
+        }
+
+        .cls001 li ul {
+            /* 중복되는 하위 태그가 없기 때문에 > 자식요소 표시를 따로 안해줌 */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cls001 li ul li {            
+            width: 120px;
+            height: 30px;
+            line-height: 30px;            
+            border: 1px solid black;
+            text-align: center;            
+            display: none;
+            /* margin-left를 넣어주면 차트 아귀가 잘 맞는다 */
+            margin-left: -1px;
+        }
+
+        .cls001 li:hover ul li {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="cls001">
+        <!-- 밑에 ul과 구분을 위해 -->
+        <li>HTML
+            <ul>
+                <li>HTML1</li>
+                <li>HTML2</li>
+                <li>HTML3</li>
+            </ul>
+        </li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>jQuery</li>
+        <li>portfolio</li>
+    </ul>
+    
+</body>
+</html>
